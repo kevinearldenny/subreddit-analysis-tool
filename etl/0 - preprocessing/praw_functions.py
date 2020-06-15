@@ -41,19 +41,6 @@ def get_subreddit_posts(s, limit):
     soo = process_posts(post_list)
     return soo
 
-def get_subreddit_posts_on_day(s, day):
-    sd = day.replace(hour=0, minute=0)
-    start_timestamp = day.replace(tzinfo=timezone.utc).timestamp()
-    next_day = day + timedelta(hours=24)
-    end_timestamp = next_day.replace(tzinfo=timezone.utc).timestamp()
-
-    q = 'timestamp%3A{0}..{1}'.format(str(int(start_timestamp)), str(int(end_timestamp)))
-    print(q)
-    post_list = r.subreddit(s).search(q, sort='new', syntax='cloudsearch')
-
-    soo = process_posts(post_list)
-    return soo
-
 def get_user_posts(a, limit):
     user_posts = r.redditor(a).new(limit=limit)
     soo = process_posts(user_posts)

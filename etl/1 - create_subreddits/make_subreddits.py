@@ -14,6 +14,7 @@ service_file_path = 'reddit-analysis-280121-f1dd55e14bf9.json'
 
 ### This should be the name of a Google Sheet
 ### Sheet should contain the following fields: 'name', 'url', 'category', 'in_initial_target_list'
+### Example sheet: https://docs.google.com/spreadsheets/d/1bnZgLHcLCFr2bx0jmTuGWGg37cPAqyRdkIPYXad-Nbg/edit?usp=sharing
 google_sheet_name = 'Subreddit Counts'
 
 def create_user(name):
