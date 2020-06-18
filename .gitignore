@@ -1,5 +1,7 @@
 django-app/db.sqlite3
 django-app/staticfiles
+django-app/env/
+etl/env/
 etl/1 - create_subreddits/reddit-analysis-280121-f1dd55e14bf9.json
 .idea/vcs.xml
 .idea

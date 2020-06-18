@@ -18,9 +18,3 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
         fields = ['title', 'subreddit', 'author', 'url', 'created_at', 'is_text_only', 'is_original_content', 'num_comments', 'score', 'upvote_ratio']
-
-# class SubredditSerializer(serializers.Serializer):
-#     name = serializers.CharField(max_length=250)
-#     url = serializers.CharField(max_length=500)
-#     category = serializers.CharField(max_length=100)
-#     in_initial_target_list = serializers.BooleanField()

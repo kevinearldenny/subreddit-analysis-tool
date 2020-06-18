@@ -17,14 +17,14 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class SubredditViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows subreddits to be viewed or edited.
     """
     queryset = Subreddit.objects.all().order_by('name')
     serializer_class = SubredditSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows posts to be viewed or edited.
     """
     queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer

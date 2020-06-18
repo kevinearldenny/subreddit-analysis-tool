@@ -9,7 +9,8 @@ from pprint import pprint
 api_base = 'https://nameless-brook-44383.herokuapp.com'
 
 date_format = '%Y-%m-%d %H:%M'
-
+start_date = datetime.strptime('2020-01-01', '%Y-%m-%d')
+end_date = datetime.now()
 
 def get_subreddits():
     u = '{0}/subreddits/'.format(api_base)
@@ -44,8 +45,8 @@ def cleanse_pushshift_and_create_post(all_data):
 def sync_historic_data_for_subreddit(s):
     ### Sync all data before today
     last_day = (datetime.today()).day
-    beginning_timestamp = int(datetime(year=2020, month=1, day=1).timestamp())
-    end_timestamp = int(datetime(year=2020,month=6,day=last_day).timestamp())
+    beginning_timestamp = int(start_date.timestamp())
+    end_timestamp = int(end_date.timestamp())
     data = get_posts_for_time_period(s['name'], beginning_timestamp, end_timestamp)
     all_data = data
     while len(data) >= 500:
